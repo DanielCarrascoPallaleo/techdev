@@ -25,24 +25,27 @@
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Recuerdame</span>
-                </label>
-            </div>
+            <div class="flex items-center justify-end mt-4 mb-2">
 
-            <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                         ¿Has olvidado tu contraseña?
                     </a>
                 @endif
 
+            </div>
+            <div class="w-full flex items-center justify-between">
+                <a
+                    href="{{ route('register') }}"
+                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                >
+                    Registrar
+                </a>
                 <x-button class="ms-4">
                     Iniciar sesión
                 </x-button>
             </div>
+
         </form>
     </x-authentication-card>
 </x-guest-layout>
